@@ -1,9 +1,0 @@
-{
-  "mcpServers": {
-    "ntut-automation-mcp": {
-      "command": "python",
-      "args": ["d:/project/NTUT_Entry/captcha_mcp.py"],
-      "env": {}
-    }
-  }
-}
