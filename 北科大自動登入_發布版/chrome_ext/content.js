@@ -1,4 +1,4 @@
-﻿function processLogin() {
+function processLogin() {
     const bodyText = document.body.innerText || "";
     if (bodyText.includes("登入失敗") || (bodyText.includes("驗證碼") && bodyText.includes("錯誤"))) {
         const links = Array.from(document.querySelectorAll("a, button, input")).filter(el => {
@@ -31,7 +31,6 @@
         const b64 = c.toDataURL('image/png');
 
         if (retryCount === 0) btn.value = "連線背景服務中 (首次開機請稍候)...";
-        btn.disabled = true;
 
         fetch("http://127.0.0.1:19222/", {
             method: "POST",
@@ -49,7 +48,6 @@
                 mpassword.dispatchEvent(new Event('input', {bubbles: true}));
                 authcode.dispatchEvent(new Event('input', {bubbles: true}));
 
-                btn.disabled = false;
                 btn.value = originalBtnText;
                 btn.click();
             }
@@ -60,13 +58,7 @@
                 btn.value = `等待系統啟動服務中... (${retryCount}/${maxRetries})`;
                 setTimeout(doFetch, 1000);
             } else {
-                btn.value = "伺服器無回應，請點擊重試";
-                btn.disabled = false;
-                btn.onclick = (e) => {
-                    e.preventDefault();
-                    retryCount = 0;
-                    doFetch();
-                };
+                btn.value = "自動登入失敗，請手動登入";
             }
         });
     };
