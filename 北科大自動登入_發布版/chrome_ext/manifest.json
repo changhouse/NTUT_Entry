@@ -1,0 +1,17 @@
+﻿{
+  "manifest_version": 3,
+  "name": "北科大自動登入輔助",
+  "version": "1.0",
+  "description": "與本機 Python 腳本配合，在不關閉瀏覽器的情況下自動填寫驗證碼登入。",
+  "permissions": [],
+  "host_permissions": [
+    "http://127.0.0.1:19222/",
+    "https://nportal.ntut.edu.tw/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://nportal.ntut.edu.tw/*"],
+      "js": ["content.js"]
+    }
+  ]
+}

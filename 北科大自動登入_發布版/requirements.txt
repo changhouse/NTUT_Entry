@@ -1,0 +1,5 @@
+ddddocr
+opencv-python
+python-dotenv
+numpy
+keyring

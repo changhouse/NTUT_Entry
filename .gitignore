@@ -1,0 +1,22 @@
+# 忽略憑證檔（最重要！）
+.env
+secret.key
+
+# Python 暫存
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# 虛擬環境
+venv/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+
+# 日誌
+*.log
